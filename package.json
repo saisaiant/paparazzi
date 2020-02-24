@@ -15,6 +15,7 @@
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "resolve-url-loader": "^2.3.1",
+        "svg-inline-loader": "^0.8.2",
         "tailwindcss-plugins": "^0.3.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"

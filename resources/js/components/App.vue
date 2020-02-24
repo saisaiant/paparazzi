@@ -62,6 +62,7 @@
                         <base-button disabled primary>Primary</base-button>
                     </td>
                 </tr>
+                <tr>
                     <td class="py-6">
                         <base-button small disabled>Default</base-button>
                     </td>
@@ -73,17 +74,45 @@
                     </td>
                 </tr>
             </table>
-        </section>    
+        </section>
+        <section class="m-16">
+            <h1 class="text-5xl font-semibold mb-8">Icons</h1>
+            <div class="flex mb-8">
+                <base-icon 
+                v-for="icon in icons" :key="icon"
+                :icon="icon" 
+                class="fill-current w-6 h-6 mr-4"
+                primary="text-gray-500"       
+            ></base-icon>
+            </div>
+            <div class="flex">
+                <base-icon 
+                v-for="icon in icons" :key="icon"
+                :icon="icon" 
+                class="fill-current w-6 h-6 mr-4"
+                primary="text-blue-300 hover:text-blue-500"       
+            ></base-icon>
+            </div>
+        </section>
     </div>
 </template>
 <script>
 import BasePanel from './BasePanel'
 import BaseButton from './BaseButton'
+import BaseIcon from './BaseIcon'
 
 export default {
     components: {
         BasePanel,
-        BaseButton
+        BaseButton,
+        BaseIcon
+    },
+    data() {
+        return {
+            icons: [
+                'camera', 'application', 'cog', 'histroy', 'link', 'paint', 'trash'
+            ]
+        }
     },
     methods: {
         sayHi() {

@@ -161,24 +161,41 @@
             ></base-icon>
             </div>
         </section>
+        <section class="m-16">
+            <h1 class="text-5xl font-semibold mb-8">Form Element</h1>
+            <base-panel>
+                <base-input v-model="name" lable="Name" class="mb-4"></base-input>
+                <base-input v-model="dateOfBirth" lable="Date of Birth" type="date" class="mb-4"></base-input>
+                <base-select v-model="plan" :options="avaliablePlans" lable="Select a Plan" class="mb-4"></base-select>
+                <base-checkbox v-model="subscribeToNewletter" lable="Subscribe me to your monthly newsletter"></base-checkbox>
+                <!-- <div class="text-xs mb-2">
+                    <span class="font-semibold">subscribeToNewletter: </span>
+                    <span v-text="subscribeToNewletter ? 'true' : 'false'"></span>
+                </div> -->
+                <!-- <div class="text-xs">
+                    <span class="font-semibold">dateOfBirth:</span>
+                    <span v-text="dateOfBirth"></span>
+                </div> -->
+            </base-panel>
+        </section>
     </div>
 </template>
 <script>
-import BasePanel from './BasePanel'
-import BaseButton from './BaseButton'
-import BaseIcon from './BaseIcon'
 
-export default {
-    components: {
-        BasePanel,
-        BaseButton,
-        BaseIcon
-    },
+export default {    
     data() {
         return {
-            icons: [
-                'camera', 'application', 'cog', 'histroy', 'link', 'paint', 'trash'
-            ]
+            icons: ['camera', 'application', 'cog', 'histroy', 'link', 'paint', 'trash'],
+            name: 'foobar',
+            dateOfBirth: '1990-01-01',
+            plan: 'starter',
+            avaliablePlans: [
+                { value: 'free', name: 'Free' }, 
+                { value: 'starter', name: 'Starter ($5/month)' }, 
+                { value: 'premium', name: 'Premium ($10/month)'}, 
+                { value: 'business', name: 'Business ($15/month)'}
+            ],
+            subscribeToNewletter: false
         }
     },
     methods: {

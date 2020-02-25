@@ -6,10 +6,10 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
    // Specify the paths to all of the template files in your project 
    content: [
      './resources/**/*.blade.php',
-     './resources/**/*.vue',
-     //'./src/**/*.jsx',
-     // etc.
+     './resources/**/*.vue',     
    ],
+   //'./src/**/*.jsx',
+   // etc.
  
    // Include any special characters you're using in this regular expression
    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
@@ -26,6 +26,7 @@ mix.webpackConfig({
    resolve: {
       alias: {
          '@components': path.resolve(__dirname, 'resources/js/components'),
+         '@plugins$': path.resolve(__dirname, 'resources/js/plugins'),
       }
    }
 })
